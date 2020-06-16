@@ -1,11 +1,11 @@
 body {
-    /* background-color: #d6f0cd; */
+    background-color: #d6f0cd;
     background-image: linear-gradient(150deg, #e0f3b5, #83ceaf);
 }
 
 #wrapper {
     background-image: linear-gradient(#5c5c5c, #181818);
-    border: 0px solid #000;
+    border: 0px solid #000000;
     display: inline-block;
     width: 600px;
     height: 230px;
@@ -17,7 +17,6 @@ body {
 
 #info {
     border: 0px solid #000;
-    display: inline-block;
     float: left;
     margin: 10px;
 }
@@ -40,13 +39,11 @@ body {
 
 #player {
     border: 0px solid #000;
-    display: inline-block;
     float: left;
     margin: 55px auto auto 10px;
 }
 
 #title {
-    display: inline-block;
     float: left;
 	border: 0px solid #000;
     width: 330px;
@@ -55,14 +52,14 @@ body {
     top: 20%;
     font-family: "Helvetica", sans-serif;
     font-size: 100%;
-    letter-spacing: .5px;
+    letter-spacing: .3px;
     color: #fff;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
     margin-top: 25px;
-    margin-left: 15px;
+    margin-left: 7px;
 }
 
 .buttons {
-    display: inline-block;
     float: left;
 	background-color: #fff;
     border: 1px solid #000;
@@ -75,31 +72,26 @@ body {
 }
 
 #play {
-    display: inline-block;
     float: left;
     padding: 5px;
 }
 
 #pause {
-    display: inline-block;
     float: left;
     padding: 5px;
 }
 
 #backward {
-    display: inline-block;
     float: left;
     padding: 5px;
 }
 
 #forward {
-    display: inline-block;
     float: left;
     padding: 5px;
 }
 
 #shuffle {
-    display: inline-block;
     float: left;
     padding: 5px;
 }

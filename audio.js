@@ -1,19 +1,3 @@
-// Homework:
-// Create a music box. The design is completely up to you;
-// The app should be able to:
-//  - play audio files;
-//  - pause audio files;
-//  - has next/previous buttons;
-//  - has randomization (when selected it randomizes the song order);
-//  - able to load audio files;
-// Please make sure that the app looks as good as possible in 
-// terms of design. This is your portfolio and all aspects of the app
-// (not only the js logic) is very important; Start the project gradually
-//  - first figure out how to work with audio in javascript. 
-//  Once you get the play and pause buttons proceed with the rest;
-//  Leave the design and css until the end.
-
-
 let playlist = [
     {title:"Needles In the Camel's Eye", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/01.mp3"},
     {title:"The Paw Paw Negro Blowtorch", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/02.mp3"},
@@ -87,9 +71,34 @@ let shuffle = document.getElementById('shuffle')
 shuffle.addEventListener("click", playX)
 
 function playX() {
-    title.textContent = playlist[i].album;
     audioX.play();
     audio.pause();
+
+        forward.addEventListener("click", next)
+        backward.addEventListener("click", previous)
+        audioX.addEventListener("ended", next)
+
+    function next() {
+        i = i + 1
+        if (i > playlist.length - 1) {
+            i = 0
+        }
+        audioX.src = playlist[i].source;
+        title.textContent = playlist[i].title + " — " + playlist[i].artist;
+        audioX.play();
+        audio.pause();
+    }
+
+    function previous() {
+        i = i - 1
+        if (i < 0) {
+            i = playlist.length-1
+        }
+        audioX.src = playlist[i].source;
+        title.textContent = playlist[i].title + " — " + playlist[i].artist;
+        audioX.play();
+        audio.pause();
+    }
 }
 
 
@@ -101,7 +110,12 @@ function add() {
     {title:"Dead Finks Don't Talk", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/08.mp3"},
     {title:"Some Of Them Are Old", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/09.mp3"},
     {title:"Here Come the Warm Jets", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/10.mp3"})
-    audio.play()
 }
 
-window.onload(title.textContent = playlist[i].album);
+
+//onload
+window.addEventListener("load", album);
+
+function album() {
+    title.textContent = playlist[i].album;
+}
