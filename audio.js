@@ -73,32 +73,7 @@ shuffle.addEventListener("click", playX)
 function playX() {
     audioX.play();
     audio.pause();
-
-        forward.addEventListener("click", next)
-        backward.addEventListener("click", previous)
-        audioX.addEventListener("ended", next)
-
-    function next() {
-        i = i + 1
-        if (i > playlist.length - 1) {
-            i = 0
-        }
-        audioX.src = playlist[i].source;
-        title.textContent = playlist[i].title + " — " + playlist[i].artist;
-        audioX.play();
-        audio.pause();
-    }
-
-    function previous() {
-        i = i - 1
-        if (i < 0) {
-            i = playlist.length-1
-        }
-        audioX.src = playlist[i].source;
-        title.textContent = playlist[i].title + " — " + playlist[i].artist;
-        audioX.play();
-        audio.pause();
-    }
+    title.textContent = playlist[i].album;
 }
 
 
