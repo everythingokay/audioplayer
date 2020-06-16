@@ -1,13 +1,13 @@
 body {
-    background-color: #d6f0cd;
-    /* background-image: linear-gradient(to bottom right, #d6f0cd, #98ff98); */
+    /* background-color: #d6f0cd; */
+    background-image: linear-gradient(150deg, #e0f3b5, #83ceaf);
 }
 
 #wrapper {
-    background-image: linear-gradient(#5c5c5c, #333);
+    background-image: linear-gradient(#5c5c5c, #181818);
     border: 0px solid #000;
     display: inline-block;
-    width: 660px;
+    width: 600px;
     height: 230px;
     border-radius: 15px;
     position: absolute;
@@ -32,6 +32,12 @@ body {
     margin: 3px;
 }
 
+#album {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+}
+
 #player {
     border: 0px solid #000;
     display: inline-block;
@@ -42,27 +48,29 @@ body {
 #title {
     display: inline-block;
     float: left;
-	border: 1px solid #000;
-    width: 400px;
-    height: 50px;
-    border-radius: 20px;
-    justify-content: center;
+	border: 0px solid #000;
+    width: 330px;
+    height: 20px;
+    vertical-align: middle;
+    top: 20%;
     font-family: "Helvetica", sans-serif;
+    font-size: 100%;
+    letter-spacing: .5px;
     color: #fff;
-    padding-top: 20px
-    margin: 10px;
+    margin-top: 25px;
+    margin-left: 15px;
 }
 
 .buttons {
     display: inline-block;
     float: left;
 	background-color: #fff;
-    border: 1px solid #000
+    border: 1px solid #000;
     width: 30px;
     height: 30px;
     border-radius: 50px;
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 5px;
     margin-right: 7px;
 }
 

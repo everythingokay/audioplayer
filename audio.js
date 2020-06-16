@@ -15,23 +15,16 @@
 
 
 let playlist = [
-    "audio/01.mp3",
-    "audio/02.mp3",
-    "audio/03.mp3",
-    "audio/04.mp3",
-    "audio/05.mp3"
-]
-
-let tracklist = [
-    "Brian Eno - Needles In the Camel's Eye",
-    "Brian Eno - The Paw Paw Negro Blowtorch",
-    "Brian Eno - Baby's On Fire",
-    "Brian Eno - Cindy Tells Me",
-    "Brian Eno - Driving Me Backwards",
+    {title:"Needles In the Camel's Eye", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/01.mp3"},
+    {title:"The Paw Paw Negro Blowtorch", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/02.mp3"},
+    {title:"Baby's On Fire", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/03.mp3"},
+    {title:"Cindy Tells Me", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/04.mp3"},
+    {title:"Driving Me Backwards", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/05.mp3"}
 ]
 
 let audio = new Audio;
 let i = 0;
+
 
 //play & pause
 let play = document.getElementById('play')
@@ -42,15 +35,17 @@ play.addEventListener("click", playSong)
 pause.addEventListener("click", pauseSong)
 
 function playSong() {
-    audio.src = playlist[i];
-    title.textContent = tracklist[i];
+    audio.src = playlist[i].source;
+    title.textContent = playlist[i].title + " — " + playlist[i].artist;
     audio.play();
+    audioX.pause();
 }
 
 function pauseSong() {
-    audio.src = playlist[i];
-    title.textContent = tracklist[i];
+    audio.src = playlist[i].source;
+    title.textContent = playlist[i].title + " — " + playlist[i].artist;
     audio.pause();
+    audioX.pause();
 }
 
 
@@ -67,8 +62,8 @@ function next() {
     if (i > playlist.length - 1) {
         i = 0
     }
-    audio.src = playlist[i];
-    title.textContent = tracklist[i];
+    audio.src = playlist[i].source;
+    title.textContent = playlist[i].title + " — " + playlist[i].artist;
     audio.play();
 }
 
@@ -77,14 +72,14 @@ function previous() {
     if (i < 0) {
         i = playlist.length-1
     }
-    audio.src = playlist[i];
-    title.textContent = tracklist[i];
+    audio.src = playlist[i].source;
+    title.textContent = playlist[i].title + " — " + playlist[i].artist;
     audio.play();
 }
 
 
 //random & shuffle
-let random = playlist[Math.floor(Math.random() * playlist.length)];
+let random = playlist[Math.floor(Math.random() * playlist.length)].source;
 
 let audioX = new Audio(random);
 
@@ -92,8 +87,21 @@ let shuffle = document.getElementById('shuffle')
 shuffle.addEventListener("click", playX)
 
 function playX() {
+    title.textContent = playlist[i].album;
     audioX.play();
-    if (audioX.play) {
-        audio.pause();
-    }
+    audio.pause();
 }
+
+
+//add songs
+function add() {
+    playlist.push(
+    {title:"On Some Faraway Beach", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/06.mp3"},
+    {title:"Blank Frank", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/07.mp3"},
+    {title:"Dead Finks Don't Talk", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/08.mp3"},
+    {title:"Some Of Them Are Old", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/09.mp3"},
+    {title:"Here Come the Warm Jets", artist:"Brian Eno", album: "Here Come the Warm Jets", source:"audio/10.mp3"})
+    audio.play()
+}
+
+window.onload(title.textContent = playlist[i].album);
